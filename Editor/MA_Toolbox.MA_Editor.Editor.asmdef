@@ -1,8 +1,6 @@
 {
-    "name": "COMPANYNAME.PACKAGENAME.Editor",
-    "references": [
-        "COMPANYNAME.PACKAGENAME"
-    ],
+    "name": "MA_Toolbox.MA_Editor.Editor",
+    "references": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -12,5 +10,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }
