@@ -1,6 +1,8 @@
 {
     "name": "MA_Toolbox.MA_Editor.Editor",
-    "references": [],
+    "references": [
+        "GUID:3897344bdb2681a4e923ab0fad487055"
+    ],
     "includePlatforms": [
         "Editor"
     ],

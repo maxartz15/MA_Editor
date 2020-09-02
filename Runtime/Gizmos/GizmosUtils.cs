@@ -1,15 +1,23 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 namespace MA_Toolbox.MA_Editor
 {
     public static class GizmosUtils
     {
+        public enum DrawStringStyle
+        {
+            Helpbox,
+            Label,
+            TextField,
+            NumberField
+        }
+
         // References: 
         // https://forum.unity.com/threads/text-gizmo.27902/
-        public static void DrawString(string text, Vector3 worldPos, Color? textColor = null, Color? backColor = null, GUIStyle editorStyle = null)
+        public static void DrawString(string text, Vector3 worldPos, Color? textColor = null, Color? backColor = null, DrawStringStyle style = DrawStringStyle.Helpbox)
         {
+            #if UNITY_EDITOR
             Handles.BeginGUI();
 
             Color restoreTextColor = GUI.color;
@@ -17,7 +25,27 @@ namespace MA_Toolbox.MA_Editor
         
             GUI.color = textColor ?? Color.white;
             GUI.backgroundColor = backColor ?? Color.black;
-            editorStyle = editorStyle ?? EditorStyles.helpBox;
+
+            GUIStyle editorStyle = null;
+
+            switch (style)
+            {
+                case DrawStringStyle.Helpbox:
+                    editorStyle = EditorStyles.helpBox;
+                    break;
+                case DrawStringStyle.Label:
+                    editorStyle = EditorStyles.label;
+                    break;
+                case DrawStringStyle.TextField:
+                    editorStyle = EditorStyles.textField;
+                    break;
+                case DrawStringStyle.NumberField:
+                    editorStyle = EditorStyles.numberField;
+                    break;
+                default:
+                    editorStyle = EditorStyles.helpBox;
+                    break;
+            }
         
             SceneView view = SceneView.currentDrawingSceneView;
 
@@ -41,7 +69,7 @@ namespace MA_Toolbox.MA_Editor
             }
 
             Handles.EndGUI();
+            #endif
         }
     }
 }
-#endif
