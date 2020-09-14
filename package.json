@@ -1,9 +1,9 @@
 {
   "name": "com.ma_toolbox.ma_editor",
   "displayName": "MA_Toolbox - MA_Editor",
-  "version": "0.2.0",
-  "unity": "2019.3",
-  "unityRelease": "12f1",
+  "version": "0.3.0",
+  "unity": "2019.4",
+  "unityRelease": "10f1",
   "description": "Collection of Editor Utilities for Unity.",
   "category": "Editor",
   "type": "editor",
