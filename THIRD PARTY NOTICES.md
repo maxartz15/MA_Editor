@@ -27,3 +27,10 @@ This package borrows code from various different sources, including:
 - Author: [Martin](http://martinecker.com/martincodes/unity-editor-window-zooming/)
 - License: -
 - Modified: True
+
+### HelpBox
+- Folder: [HelpBox](/Editor/HelpBox)
+- Source: [TonyLi](https://forum.unity.com/threads/helpattribute-allows-you-to-use-helpbox-in-the-unity-inspector-window.462768/#post-3014998)
+- Author: [TonyLi](https://forum.unity.com/threads/helpattribute-allows-you-to-use-helpbox-in-the-unity-inspector-window.462768/#post-3014998)
+- License: -
+- Modified: True

@@ -1,5 +1,10 @@
 # Change Log:
 
+## 0.3.0
+
+- Added:
+    - HelpBox
+
 ## 0.2.0
 
 - Added:

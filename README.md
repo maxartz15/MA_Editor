@@ -5,6 +5,7 @@
 - GUILayoutZoom & Rect utils.
 - Grid.
 - Gizmos string.
+- HelpBox attribute.
 
 ## Install
 
