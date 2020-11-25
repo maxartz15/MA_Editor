@@ -2,26 +2,19 @@
 //https://forum.unity.com/threads/helpattribute-allows-you-to-use-helpbox-in-the-unity-inspector-window.462768/#post-3014998
 
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 namespace MA_Toolbox.MA_Editor
 {
-    public enum HelpBoxMessageType
-    {
-        None,
-        Info,
-        Warning,
-        Error
-    }
-
     public class HelpBoxAttribute : PropertyAttribute
     {
-        public string text;
-        public HelpBoxMessageType messageType;
+        public string m_text;
+        public HelpBoxType m_helpBoxType;
 
-        public HelpBoxAttribute(string text, HelpBoxMessageType messageType = HelpBoxMessageType.None)
+        public HelpBoxAttribute(string text, HelpBoxType helpBoxType = HelpBoxType.None)
         {
-            this.text = text;
-            this.messageType = messageType;
+            this.m_text = text;
+            this.m_helpBoxType = helpBoxType;
         }
     }
 }

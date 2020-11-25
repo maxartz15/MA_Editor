@@ -34,3 +34,11 @@ This package borrows code from various different sources, including:
 - Author: [TonyLi](https://forum.unity.com/threads/helpattribute-allows-you-to-use-helpbox-in-the-unity-inspector-window.462768/#post-3014998)
 - License: -
 - Modified: True
+
+### MethodButton
+- Folder: [MethodButton](/Editor/HelpBox)
+- Source: [Pastebin](https://pastebin.com/rn3Z2zf9)
+- Author: [Quarkism](http://www.reddit.com/user/quarkism)
+- Author: [Zaikman](http://www.reddit.com/user/zaikman)
+- License: -
+- Modified: True
