@@ -20,7 +20,7 @@ namespace MA_Toolbox.MA_Editor
     /// Shows you all values under the object reference
     /// Also provides a button to create a new ScriptableObject if property is null.
     /// </summary>
-    [CustomPropertyDrawer(typeof(ScriptableObject), true)]
+    [CustomPropertyDrawer(typeof(ExtendedScriptableObjectAttribute), true)]
     public class ExtendedScriptableObjectDrawer : PropertyDrawer
     {
 
@@ -94,9 +94,9 @@ namespace MA_Toolbox.MA_Editor
             }
             var indentedPosition = EditorGUI.IndentedRect(position);
             var indentOffset = indentedPosition.x - position.x;
-            propertyRect = new Rect(position.x + (EditorGUIUtility.labelWidth - indentOffset), position.y, position.width - (EditorGUIUtility.labelWidth - indentOffset), EditorGUIUtility.singleLineHeight);
+            propertyRect = new Rect(position.x + (EditorGUIUtility.labelWidth - indentOffset + 2), position.y, position.width - (EditorGUIUtility.labelWidth - indentOffset + 2), EditorGUIUtility.singleLineHeight);
 
-            if (propertySO != null || property.objectReferenceValue == null)
+            if (/*propertySO != null ||*/ property.objectReferenceValue == null)
             {
                 propertyRect.width -= buttonWidth;
             }
@@ -128,7 +128,7 @@ namespace MA_Toolbox.MA_Editor
                             // Don't bother drawing the class file
                             if (prop.name == "m_Script") continue;
                             float height = EditorGUI.GetPropertyHeight(prop, new GUIContent(prop.displayName), true);
-                            EditorGUI.PropertyField(new Rect(position.x, y, position.width - buttonWidth, height), prop, true);
+                            EditorGUI.PropertyField(new Rect(position.x, y, position.width /*- buttonWidth*/, height), prop, true);
                             y += height + EditorGUIUtility.standardVerticalSpacing;
                         }
                         while (prop.NextVisible(false));

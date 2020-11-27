@@ -1,5 +1,16 @@
 # Change Log:
 
+## 0.4.2
+- ExtendedScriptableObjectDrawer:
+    - Now requires an attribute.
+    - Updated spacing to align.
+
+## 0.4.1
+- Changed:
+    - Folder structure.
+        - EditorCore.
+        - MethodButton.
+
 ## 0.4.0
 - Added:
     - EditorCore.
