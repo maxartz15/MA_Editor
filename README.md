@@ -6,6 +6,7 @@
 - Grid.
 - Gizmos string.
 - HelpBox attribute.
+- MethodButton attribute.
 
 ## Install
 
