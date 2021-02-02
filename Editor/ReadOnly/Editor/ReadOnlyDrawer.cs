@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEditor;
 
 namespace MA_Toolbox.MA_Editor
@@ -6,19 +7,27 @@ namespace MA_Toolbox.MA_Editor
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
     public class ReadOnlyDrawer : PropertyDrawer
     {
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        public override void OnGUI(Rect rect, SerializedProperty property, GUIContent label)
         {
-            // Saving previous GUI enabled value
-            var previousGUIState = GUI.enabled;
+            var readOnlyAttribute = attribute as ReadOnlyAttribute;
+            bool isDisabled = true;
 
-            // Disabling edit for property
-            GUI.enabled = false;
+            if (!String.IsNullOrEmpty(readOnlyAttribute.m_onlyIfProperty))
+            {
+                if (!property.serializedObject.FindProperty(readOnlyAttribute.m_onlyIfProperty).boolValue)
+                {
+                    isDisabled = false;
+                }
+            }
 
-            // Drawing Property
-            EditorGUI.PropertyField(position, property, label);
+            EditorGUI.BeginProperty(rect, label, property);
 
-            // Setting old GUI enabled value
-            GUI.enabled = previousGUIState;
+            using (new EditorGUI.DisabledScope(disabled: isDisabled))
+            {
+                EditorGUI.PropertyField(rect, property, label, true);
+            }
+
+            EditorGUI.EndProperty();
         }
     }
 }

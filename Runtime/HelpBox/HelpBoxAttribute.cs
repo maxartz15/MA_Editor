@@ -2,7 +2,6 @@
 //https://forum.unity.com/threads/helpattribute-allows-you-to-use-helpbox-in-the-unity-inspector-window.462768/#post-3014998
 
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 namespace MA_Toolbox.MA_Editor
 {
